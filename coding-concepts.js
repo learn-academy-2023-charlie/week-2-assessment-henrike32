@@ -7,8 +7,8 @@
 
 // --------------------1) What will this log?
 
-// const cohort = "Charlie 2023"
-// console.log(cohort.split(""))
+const cohort = "Charlie 2023"
+console.log(cohort.split(""))
 
 // a) Your answer: ['c', 'h', 'a', 'r', 'l', 'i', 'e', ' ', '2', '0', '2', '3']
 // b) Verify and explain: ['c', 'h', 'a', 'r', 'l', 'i', 'e', ' ', '2', '0', '2', '3'] was the output,
@@ -16,10 +16,10 @@
 
 // --------------------2) What will this log?
 
-// const greeter = (name) => {
-//   `Hello, ${name}!`
-// }
-// console.log(greeter("LEARN Student"))
+const greeter = (name) => {
+  `Hello, ${name}!`
+}
+console.log(greeter("LEARN Student"))
 
 // a) Your answer:  nothing, it has no 'return' statement.
 // b) Verify and explain: My answer were partially correct, the output given was 'undefined' , because the function has no 'return' 
@@ -39,8 +39,8 @@
 
 // --------------------4) What will this log?
 
-// const onlyOdds = [11, 12, 13, 14, 15].filter((number) => number % 2 !== 0)
-// console.log(onlyOdds)
+const onlyOdds = [11, 12, 13, 14, 15].filter((number) => number % 2 !== 0)
+console.log(onlyOdds)
 
 // a) Your answer: [ 11, 13, 15 ]
 // b) Verify and explain: my answer were correct. The .filter method is being called on the array and being used in
@@ -67,17 +67,41 @@ console.log(myCodingSkills.languages[0])
 // the code 'myCodingSkills.languages[0]' is accessing the first element of the 'languages' array which is "JavaScript";
 // the 'console.log' statement logs the result of the code mentioned above into the console.
 
-// --------------------STRETCH: What will this log?
+// --------------------STRETCH:What will this log?
 
+// class Learn {
+//   constructor(name) {
+//     this.student = name
+//     this.cohort = "Charlie"
+//     this.year = 2023
+//   }
+// }
+// const learnStudent = new Learn("George")
+// console.log(learnStudent)
+
+// a) Your answer: "George"
+// b) Verify and explain: The output given was  Learn { student: 'George', cohort: 'Charlie', year: 2023 } .
+// This code will create a class named `Learn' with a constructor that takes in a parameter called name
+// Inside the constructor it initialize 3 properties of the object : student is set to the value of name
+// cohort is set to the string "Charlie" and year is set to the number 2023.
+// After defining the class Learn, a new instance of the class is created and named learnStudent
+// with "George" taken as an argument and passe as the name parameter.
+// The output to the console will show the properties of the learnStudent object, which should include
+// student set to "George", cohort set to "Charlie", and year set to 2023.
+
+
+
+// Playing a bit with the code to try to print a statement using the class given:
 class Learn {
   constructor(name) {
     this.student = name
     this.cohort = "Charlie"
     this.year = 2023
   }
+  description() {
+    return `${this.student} is studying at ${this.cohort} in the year of ${this.year}`
+  }
 }
 const learnStudent = new Learn("George")
-console.log(learnStudent)
-
-// a) Your answer: 
-// b) Verify and explain:
+console.log(learnStudent.description())
+// output : George is studying at Charlie in the year of 2023 
