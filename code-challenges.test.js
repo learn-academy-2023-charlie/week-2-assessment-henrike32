@@ -12,9 +12,9 @@
 
 // --------------------INSTRUCTOR EXAMPLE: Create a function that takes in an array of numbers and returns an array with all the numbers multiplied by 3.
 // a) Create a test with expect statements for each of the variables provided.
-// const numbersArray1 = [6, 7, 8, 9, 10]
+const numbersArray1 = [6, 7, 8, 9, 10]
 // Expected output: [18, 21, 24, 27, 30]
-// const numbersArray2 = [24, 27, 30, 33, 36]
+const numbersArray2 = [24, 27, 30, 33, 36]
 // Expected output: [72, 81, 90, 99, 108]
 // b) Create the function that makes the test pass.
 
@@ -24,8 +24,8 @@
 // input - none
 // output - check if a number is divisible by three or not
 // function name - `diviThree`
-// if the number is divisible by three return - "number is evenly divisible by three"
-// if the number is not divisible by three return - "number is not evenly divisible by three"
+// if the number is divisible by three return - "number is  divisible by three"
+// if the number is not divisible by three return - "number is not  divisible by three"
 
 // a) Create a test with expect statements for each of the variables provided.
 
@@ -37,7 +37,7 @@
 //     });
 // });
 
-// output:     ReferenceError: diviThree is not defined
+// output:     ReferenceError: diviThree is not defined  <- good error
 
 // const object1 = { number: 15 } ;
 // Expected output: "15 is divisible by three"
@@ -48,29 +48,32 @@
 
 // // b) Create the function that makes the test pass.
 
-// class Divider {
-//     constructor (number) {
-//     this.number = number;
-//     }
-//     answer() {
-//         return this.number % 3 === 0;
-//     }  
-// };
+class Divider {
+    constructor (number) {
+    this.number = number;
+    }
+    answer() {
+        return this.number % 3 === 0;
+    }  
+};
 
-// const diviThree = (obj) => {
-//     if (obj.answer()) {
-//         return `${obj.number} is divisible by three`;
-//     } else {
-//         return `${obj.number} is not divisible by three`;
-//     }
-// };
-// const object1 = new Divider(15);
-// const object2 = new Divider(0);
-// const object3 = new Divider(-7);
+const diviThree = (obj) => {
+    if (obj.answer()) {
+        return `${obj.number} is divisible by three`;
+    } else {
+        return `${obj.number} is not divisible by three`;
+    }
+};
+const object1 = new Divider(15);
+const object2 = new Divider(0);
+const object3 = new Divider(-7);
+
+console.log(diviThree(object1));
+console.log(diviThree(object2));
+console.log(diviThree(object3));
 
 
 // output:  It took me a while but now the test passed.
-
 
 // --------------------2) Create a function that takes in an array of words and returns an array with all the words capitalized.
 
@@ -87,7 +90,9 @@
 //           expect(capWords(randomNouns2)).toEqual(expectedOutput2);
 //     });
 // });
-// output:     ReferenceError: capWords is not defined <- good.
+
+// output:     ReferenceError: capWords is not defined <- good error
+
 const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"];
 const expectedOutput1 = ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"];
 // Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
@@ -97,30 +102,66 @@ const expectedOutput2 = ["Temperature", "Database", "Chopsticks", "Mango"];
 
 // b) Create the function that makes the test pass.
 
-// function capWords(arr) {
-//     return arr.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+// function capWords(array) {
+//     return array.map(word => word.charAt(0).toUpperCase() + word.slice(1));
 //   }
-
-
 // Comment: To be honest I was stuck at the function part, whenever I tried to use `randomNouns1.charAt(0).toUpperCase()` it would
 // always say that `randomNouns1.charAt(0) was not a function. I think I am mixing all the concepts and trying too much to guess instead of research the concepts.
 
 // research -> The capWords function takes an array of words as its parameter and uses the map method to iterate over the array and apply the capitalization logic to each word. The test cases use the toEqual matcher to check if the function returns the expected output for each input array.  -> Quick note, the `word` parameter and the `.charAt()` method is new to me.
+// I've gave it some time since last night and came back to code and found that the solution was simpler than I thought, here is the code I've
+//  created for this problem:
+
+const capWords = (array) => {
+    return array.map((array) => {
+        return array[0].toUpperCase() + array.substring(1)
+    });
+};
+console.log(capWords(randomNouns1));
+console.log(capWords(randomNouns2));
 
 
 // --------------------3) Create a function that takes in a string and logs the index of the first vowel.
 
 // Pseudo code -> 
 // input - none
-// output - an array with all the words capitalized
-// function name - `capWords`
+// output - index of the first vowel
+// function name - `firstV`
+
 // a) Create a test with expect statements for each of the variables provided.
 
 const vowelTester1 = "learn"
+const expO1 = 1
 // Expected output: 1
 const vowelTester2 = "academy"
+const expO2 = 0
 // Expected output: 0
 const vowelTester3 = "challenges"
+const expO3 = 2
 // Expected output: 2
 
+// describe ( "index of the first vowel", () =>{
+//     it("returns something", () =>{
+//         expect(firstV).toEqual(expO1)
+//         expect(firstV).toEqual(expO2)
+//         expect(firstV).toEqual(expO3)
+//     })
+// })
+
+//output:     ReferenceError: firstV is not defined <- good error
+
 // b) Create the function that makes the test pass.
+
+function firstV(array){
+    const vowels = [ 'a', 'e', 'i', 'o', 'u' ];
+    for (let i = 0; i < array.length ; i++) {
+        if (vowels.includes(array[i])) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+console.log(firstV(vowelTester1));
+console.log(firstV(vowelTester2));
+console.log(firstV(vowelTester3));
