@@ -21,12 +21,12 @@ const numbersArray2 = [24, 27, 30, 33, 36]
 // ------1) Create a function that takes a object as an argument and decides if the number inside it is evenly divisible by three or not.
 
 // pseudo code -> 
-// input - none
-// output - check if a number is divisible by three or not
-// function name - `diviThree`
-// if the number is divisible by three return - "number is  divisible by three"
-// if the number is not divisible by three return - "number is not  divisible by three"
-
+// input - object.
+// output - check if a number is divisible by three or not.
+// process -> create function named `diviThree` with the conditionals that state that if the number is divisible by three return - "number 
+// is  divisible by three" and that states if the number is not divisible by three  to return - "number is not  divisible by three".
+// create a class named Divider with the constructor as a number and the number is the value in a key value pair within the object that 
+// is being passed in.
 // a) Create a test with expect statements for each of the variables provided.
 
 // describe(`diviThree`, () => {
@@ -78,9 +78,12 @@ console.log(diviThree(object3));
 // --------------------2) Create a function that takes in an array of words and returns an array with all the words capitalized.
 
 // Pseudo code -> 
-// input - none
+// input - array of words
 // output - an array with all the words capitalized
-// function name - `capWords`
+// process ->
+// create a function named `capWords` that takes in an array and return an array with the first index with the toUpperCase() method and
+// using the `.substring()` method that removes one character at a specific position in a string and returns the remainder, in this case the first 
+// character will be removed from the strings inside the array and using the `+` to concatenate the whole result. 
 
 // a) Create a test with expect statements for each of the variables provided.
 
@@ -124,9 +127,14 @@ console.log(capWords(randomNouns2));
 // --------------------3) Create a function that takes in a string and logs the index of the first vowel.
 
 // Pseudo code -> 
-// input - none
+// input - function that takes in a string 
 // output - index of the first vowel
-// function name - `firstV`
+// process - >
+// create a function named `firstV`  add the describe statement "index of the first vowel"
+// with your it statement "returns something" and a callback function with the expected output.
+// using the method toEqual, also creating new variables with the expected outputs to add to this expect statement.
+// that takes in an array named `vowels` and make an iteration going through the array checking if they have vowels.
+// console.log the function 'firstV' with the variables you want to test.
 
 // a) Create a test with expect statements for each of the variables provided.
 
